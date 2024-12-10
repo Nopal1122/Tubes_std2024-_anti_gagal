@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1733585215 source:c:\users\naufal\documents\graph\tubes_std\graph.cpp
+	"graph.h"
+
+1733585297 c:\users\naufal\documents\graph\tubes_std\graph.h
+	<iostream>
+	<string>
+
+1733585216 source:c:\users\naufal\documents\graph\tubes_std\main.cpp
+	"graph.h"
+	<iostream>
+	<string>
+
