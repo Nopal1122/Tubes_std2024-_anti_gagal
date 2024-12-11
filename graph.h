@@ -16,6 +16,7 @@ struct Graph {
     int jumlahNode;                                // Jumlah node yang ada dalam graph
 };
 
+// Fungsi-fungsi graph
 void inisialisasiGraph(Graph &g);
 void tambahNode(Graph &g, const string &namaNode);
 void tambahKoneksi(Graph &g, const string &node1, const string &node2, int jarakMeter);
