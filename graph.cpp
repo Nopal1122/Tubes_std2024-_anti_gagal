@@ -36,13 +36,11 @@ void tambahKoneksi(Graph &g, const string &node1, const string &node2, int jarak
     int indeks2 = cariIndeksNode(g, node2);
 
     if (indeks1 == -1 || indeks2 == -1) {
-        cout << "Node \"" << (indeks1 == -1 ? node1 : node2) << "\" tidak ditemukan.\n";
         return;
     }
-
+//
     // Cek apakah koneksi sudah ada
     if (g.matriksKetetanggaan[indeks1][indeks2] != INF) {
-        cout << "Koneksi antara \"" << node1 << "\" dan \"" << node2 << "\" sudah ada.\n";
         return;
     }
 
