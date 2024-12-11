@@ -24,42 +24,60 @@ int main() {
         tambahNode(g, gedung[i]);
     }
 
-    // Data koneksi antar node
-    const struct Koneksi {
+    // Data koneksi antar node dari masing-masing gerbang
+    struct Koneksi {
         string node1;
         string node2;
         int jarak;
-    } koneksi[] = {
-        {"Gate 1", "Telyu Oplib", 20},
+    };
+
+    const Koneksi koneksiGate1[] = {
+        {"Gate 1", "Telyu Oplib", 50},
         {"Telyu Oplib", "Gedung Ekonomi Bisnis", 50},
         {"Telyu Oplib", "Jln Telekomunikasi", 250},
         {"Jln Telekomunikasi", "Parkiran TULT", 380},
         {"Parkiran TULT", "TULT", 70},
+    };
+    const int jumlahKoneksiGate1 = sizeof(koneksiGate1) / sizeof(koneksiGate1[0]);
 
+    const Koneksi koneksiGate2[] = {
         {"Gate 2", "Fakultas Ilmu Terapan", 50},
         {"Fakultas Ilmu Terapan", "Alumni Coffee Univ Telkom", 100},
         {"Alumni Coffee Univ Telkom", "Telkom University Convention Hall", 275},
         {"Telkom University Convention Hall", "Parkiran GKU", 150},
         {"Parkiran GKU", "Asrama Laki", 180},
         {"Asrama Laki", "TULT", 200},
+    };
+    const int jumlahKoneksiGate2 = sizeof(koneksiGate2) / sizeof(koneksiGate2[0]);
 
+    const Koneksi koneksiGate3[] = {
         {"Gate 3", "Gedung Bangkit", 50},
         {"Gedung Bangkit", "Menara Eiffel Telkom University", 50},
         {"Menara Eiffel Telkom University", "GKU", 250},
         {"GKU", "Asrama Laki", 380},
-        {"Asrama laki", "TULT", 380},
+        {"Asrama Laki", "TULT", 380},
+    };
+    const int jumlahKoneksiGate3 = sizeof(koneksiGate3) / sizeof(koneksiGate3[0]);
 
+    const Koneksi koneksiGate4[] = {
         {"Gate 4", "Masjid MSU", 50},
         {"Masjid MSU", "GKU", 400},
         {"GKU", "Asrama Laki", 250},
         {"Asrama Laki", "TULT", 200},
     };
-    const int jumlahKoneksi = sizeof(koneksi) / sizeof(koneksi[0]);
+    const int jumlahKoneksiGate4 = sizeof(koneksiGate4) / sizeof(koneksiGate4[0]);
 
-    // Tambahkan koneksi
-    for (int i = 0; i < jumlahKoneksi; i++) {
-        tambahKoneksi(g, koneksi[i].node1, koneksi[i].node2, koneksi[i].jarak);
-    }
+    // Tambahkan semua koneksi ke dalam graph
+    auto tambahkanSemuaKoneksi = [&](const Koneksi koneksi[], int jumlah) {
+        for (int i = 0; i < jumlah; i++) {
+            tambahKoneksi(g, koneksi[i].node1, koneksi[i].node2, koneksi[i].jarak);
+        }
+    };
+
+    tambahkanSemuaKoneksi(koneksiGate1, jumlahKoneksiGate1);
+    tambahkanSemuaKoneksi(koneksiGate2, jumlahKoneksiGate2);
+    tambahkanSemuaKoneksi(koneksiGate3, jumlahKoneksiGate3);
+    tambahkanSemuaKoneksi(koneksiGate4, jumlahKoneksiGate4);
 
     // Menu interaktif
     int pilihan;
@@ -119,5 +137,4 @@ int main() {
     } while (pilihan != 5);
 
     return 0;
-    //tes
 }
