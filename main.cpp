@@ -128,16 +128,16 @@ int main() {
             cariJalurTerpendek(g, nodeAwal, nodeTujuan);
             break;
         }
-        case 5:{
-            cout << "\nKeluar dari program. Terima kasih!\n";
-            break;
-        default:
-            cout << "\nPilihan tidak valid. Silakan coba lagi.\n";
-        }
-         case 6: {
+        case 6: {
             gedungPalingRamai(g);
             break;
         }
+        case 7: {
+            cout << "\nKeluar dari program. Terima kasih!\n";
+            break;
+        }
+        default:
+            cout << "\nPilihan tidak valid. Silakan coba lagi.\n";
         }
     } while (pilihan != 7);
 

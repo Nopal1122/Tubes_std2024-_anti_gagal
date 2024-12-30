@@ -157,28 +157,28 @@
     }
 
        void gedungPalingRamai(const Graph &g) {
-        int frekuensi[MAX_NODES] = {0};
+        int Koneksi[MAX_NODES] = {0};
 
         for (int i = 0; i < g.jumlahNode; i++) {
         for (int j = 0; j < g.jumlahNode; j++) {
             if (g.matriksKetetanggaan[i][j] != INF && g.matriksKetetanggaan[i][j] != 0) {
-                frekuensi[i]++;
+                Koneksi[i]++;
             }
         }
     }
 
-        int maxFrekuensi = 0;
+        int maxKoneksi = 0;
         string nodeTersering;
 
         for (int i = 0; i < g.jumlahNode; i++) {
-        if (frekuensi[i] > maxFrekuensi) {
-            maxFrekuensi = frekuensi[i];
+        if (Koneksi[i] > maxKoneksi) {
+            maxKoneksi = Koneksi[i];
             nodeTersering = g.namaNode[i];
         }
     }
 
         cout << "Node yang paling sering dilewati adalah: " << nodeTersering
-         << " dengan frekuensi " << maxFrekuensi << endl;
+         << " dengan Koneksi " << maxKoneksi << endl;
     }
 
 
