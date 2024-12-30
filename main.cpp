@@ -86,8 +86,8 @@ int main() {
         cout << "2. Tambahkan lokasi Baru\n";
         cout << "3. Tambahkan Koneksi Baru\n";
         cout << "4. Cari Jalur Terpendek\n";
-        cout << "6. Temukan Gedung/Node yang Paling Sering Dilewati\n";
-        cout << "7. Keluar\n";
+        cout << "5. Temukan Gedung/Node yang Paling Sering Dilewati\n";
+        cout << "6. Keluar\n";
         cout << "Masukkan pilihan: ";
         cin >> pilihan;
         cin.ignore(); // Membersihkan newline dari buffer input
@@ -128,11 +128,11 @@ int main() {
             cariJalurTerpendek(g, nodeAwal, nodeTujuan);
             break;
         }
-        case 6: {
+        case 5: {
             gedungPalingRamai(g);
             break;
         }
-        case 7: {
+        case 6: {
             cout << "\nKeluar dari program. Terima kasih!\n";
             break;
         }

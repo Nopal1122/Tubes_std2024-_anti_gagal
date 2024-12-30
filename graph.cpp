@@ -177,7 +177,7 @@
         }
     }
 
-        cout << "Node yang paling sering dilewati adalah: " << nodeTersering
+        cout << "Gedung yang paling sering dilewati adalah: " << nodeTersering
          << " dengan Koneksi " << maxKoneksi << endl;
     }
 
