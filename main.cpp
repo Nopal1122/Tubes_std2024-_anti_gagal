@@ -19,7 +19,6 @@ int main() {
     };
     const int jumlahNode = sizeof(gedung) / sizeof(gedung[0]);
 
-    // Tambahkan node ke dalam graph
     for (int i = 0; i < jumlahNode; i++) {
         tambahNode(g, gedung[i]);
     }
@@ -34,7 +33,7 @@ int main() {
     const Koneksi koneksiGate1[] = {
         {"Gate 1", "Telyu Oplib", 50},
         {"Telyu Oplib", "Gedung Ekonomi Bisnis", 50},
-        {"Telyu Oplib", "Jln Telekomunikasi", 250},
+        {"Gedung Ekonomi Bisnis", "Jln Telekomunikasi", 250},
         {"Jln Telekomunikasi", "Parkiran TULT", 380},
         {"Parkiran TULT", "TULT", 70},
     };
@@ -83,11 +82,12 @@ int main() {
     int pilihan;
     do {
         cout << "\n==== MENU ====\n";
-        cout << "1. Tampilkan Semua Node\n";
-        cout << "2. Tambahkan Node Baru\n";
+        cout << "1. Tampilkan Semua Titik lokasi\n";
+        cout << "2. Tambahkan lokasi Baru\n";
         cout << "3. Tambahkan Koneksi Baru\n";
         cout << "4. Cari Jalur Terpendek\n";
-        cout << "5. Keluar\n";
+        cout << "6. Temukan Gedung/Node yang Paling Sering Dilewati\n";
+        cout << "7. Keluar\n";
         cout << "Masukkan pilihan: ";
         cin >> pilihan;
         cin.ignore(); // Membersihkan newline dari buffer input
@@ -102,7 +102,7 @@ int main() {
         }
         case 2: {
             string namaNode;
-            cout << "\nMasukkan nama node baru: ";
+            cout << "\nMasukkan nama lokasi baru: ";
             getline(cin, namaNode);
             tambahNode(g, namaNode);
             break;
@@ -128,13 +128,18 @@ int main() {
             cariJalurTerpendek(g, nodeAwal, nodeTujuan);
             break;
         }
-        case 5:
+        case 5:{
             cout << "\nKeluar dari program. Terima kasih!\n";
             break;
         default:
             cout << "\nPilihan tidak valid. Silakan coba lagi.\n";
         }
-    } while (pilihan != 5);
+         case 6: {
+            gedungPalingRamai(g);
+            break;
+        }
+        }
+    } while (pilihan != 7);
 
     return 0;
 }

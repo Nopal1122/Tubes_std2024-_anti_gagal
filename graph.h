@@ -17,11 +17,15 @@ struct Graph {
 };
 
 // Fungsi-fungsi graph
+//naufal
 void inisialisasiGraph(Graph &g);
+//naufal
 void tambahNode(Graph &g, const string &namaNode);
 void tambahKoneksi(Graph &g, const string &node1, const string &node2, int jarakMeter);
+//naufal
 int cariIndeksNode(const Graph &g, const string &namaNode);
 void tampilkanJalur(const int prev[], const Graph &g, const string &nodeAwal, const string &nodeTujuan);
 void cariJalurTerpendek(const Graph &g, const string &nodeAwal, const string &nodeTujuan);
+void gedungPalingRamai(const Graph &g);
 
 #endif // GRAPH_H
